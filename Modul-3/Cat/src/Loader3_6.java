@@ -5,14 +5,14 @@ public class Loader3_6 {
     public static void main(String[] args) {
                //Урок 3.6
         Cat murzik = new Cat();
-        Cat barsik = createTwin(murzik); //клонируем из мурзика  браскиа
+        Cat barsik = murzik.createTwin(murzik); //клонируем из мурзика  браскиа
 
         System.out.println("Вес Мурзика " + murzik.getWeight());
         System.out.println("Вес Барсика " + barsik.getWeight());
         System.out.println("Количество котиков " + Cat.getCount());
         System.out.println();
            //кормим Мурзика на убой для проверки
-        murzik.feed(12000.0);
+        murzik.feedCatCount(12000.0);
         System.out.println("Кормим Мурзика на убой...");
         System.out.println("Мурзик - " + murzik.getStatus());
         System.out.println("Барсик - " + barsik.getStatus());
@@ -22,10 +22,5 @@ public class Loader3_6 {
         System.out.println("Количество котиков " + Cat.getCount());
 
     }
-     //создаем метод для копирования котика
- public static Cat createTwin(Cat cat)
- {
-     cat = new Cat(cat); //создаем близница котика с помощью конструктора
-     return cat;
- }
+
 }

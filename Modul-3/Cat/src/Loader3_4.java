@@ -12,10 +12,20 @@ public class Loader3_4 {
 
         System.out.println("Мурзик кушает на убой");
 
-        for (int i = 0; i < 100000; i++)
-        {
-            murzik.feed(10.0);
+        String dead = murzik.getStatus();// Получаем состояние кота
+
+        while(!dead.equals("Exploded") && !dead.equals("Dead")) {
+
+            murzik.feedCatCount(10.0);
+            dead = murzik.getStatus();
+            System.out.println(dead);
         }
+
+//        for (int i = 0; i < 100000; i++)
+//        {
+//            murzik.feed(10.0);
+//
+//        }
         System.out.println("Myрзик - " + murzik.getStatus());
 
         System.out.println("Количество котов = " + Cat.getCount() );

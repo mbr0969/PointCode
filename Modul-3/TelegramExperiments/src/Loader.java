@@ -21,7 +21,7 @@ public class Loader {
         String phone = reader.readLine().trim();
         AuthCheckedPhone authCheckedPhone = bridge.authCheckPhone(phone);
 
-        //проверяем зарегистрирован номер или нет, если зарегистрирован, то авторизуемся
+//проверяем зарегистрирован номер или нет, если зарегистрирован, то авторизуемся
         if (authCheckedPhone.isRegistered())
         {
             AuthSentCode authSentCode = bridge.authSendCode(phone);
@@ -38,5 +38,7 @@ public class Loader {
        {
           System.out.println("Your phone number is not registered!");
         }
+// разрываем соединение.
+        bridge.authLogOut();
     }
 }

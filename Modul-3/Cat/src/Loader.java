@@ -4,7 +4,7 @@ public class Loader
     public static void main(String[] args)
     {
 
-        // Урок 3.2
+// Урок 3.2
         Cat murzik = new Cat();
         System.out.println("murzik " + murzik.getStatus());
 
@@ -21,7 +21,7 @@ public class Loader
         System.out.println("musja " + musja.getStatus());
 
 
-        // кормим Мурзика...
+// кормим Мурзика...
             System.out.println("murzik feed... ");
         for (int i = 0; i < 10000; i++)
         {
@@ -29,43 +29,48 @@ public class Loader
         }
 
 
-        // поим ваську
+// поим ваську
             System.out.println("vasjka drinking...");
         for (int i = 0; i < 100; i++)
         {
              vasjka.drink(1.0);
         }
 
-
-        //Барсик мяукает
+//Барсик мяукает
             System.out.println("barsik meow...");
 
-        for (int i = 0; i < 100000; i++)
-        {
-              barsik.meow();
-        }
+//Испраляем задание. Пока Барсик жив он мяукает
+
+            String dead = barsik.getStatus();// Получаем состояние барсика
+
+            while(!dead.equals("Dead")) {  // Если Барсик не сдох он мяукает
+                barsik.meow();
+                dead = barsik.getStatus();
+                System.out.println(dead);
+            }
+
         System.out.println();
 
-        // что с котами???
+// что с котами???
+        System.out.println("barsik " + barsik.getStatus());
         System.out.println("vasjka "  + vasjka.getStatus());
         System.out.println("murzik " + murzik.getStatus());
-        System.out.println("barsik " + barsik.getStatus());
+
         System.out.println();
 
-        // сколько весят котики
+// сколько весят котики
         System.out.println("vasika weight  " + vasjka.getWeight());
         System.out.println("murzik weight  " + murzik.getWeight());
         System.out.println("barsik weight  " + barsik.getWeight());
         System.out.println("murka weight  " + murka.getWeight());
         System.out.println("musja weight  " + musja.getWeight());
 
-             //Урок 3.3
-        //сколько съел мурзик
+//Урок 3.3   сколько съел мурзик
         System.out.println();
         System.out.println("murzik's food is  " + murzik.food());
         System.out.println();
 
-        //васька идет в туалет.
+//васька идет в туалет.
         System.out.println("vasika going to WC with weight " + vasjka.getWeight());
         for (int i = 0; i < 10; i++ )
         {
@@ -75,7 +80,7 @@ public class Loader
         System.out.println("vasika weight  " + vasjka.getWeight());
         System.out.println();
 
-        // узанетм разницу в весе котиков
+// узанетм разницу в весе котиков
         System.out.println(murka.getWeight());
         System.out.println(musja.getWeight());
         System.out.println("difference = " + Cat.getWeightDifference( murka, musja));
